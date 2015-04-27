@@ -1,5 +1,14 @@
 <?php
+function getPasswordSalt() {
+	$salt = "eHaat";
+	return $salt;
+}
+
 function redirectWithError($var, $msg, $to) {
+	if(isset($link)) {
+		$link->close();
+	}
+
 	$_SESSION["error"] = [
 		$var => $msg
 	];
@@ -8,21 +17,15 @@ function redirectWithError($var, $msg, $to) {
 }
 
 function redirectWithMessage($var, $msg, $to) {
+	if(isset($link)) {
+		$link->close();
+	}
+	
 	$_SESSION["message"] = [
 		$var => $msg
 	];
 	header("LOCATION: $to");
 	die();
-}
-
-function isVariablesSet($vars) {
-
-	foreach ($vars as $var) {
-		if (!isset($var) || $var == "") {
-			return false;
-		}
-	}
-	return true;
 }
 
 function getInsertQuery($table, $cols, $vals, $types) {
@@ -51,5 +54,13 @@ function getInsertQuery($table, $cols, $vals, $types) {
 	}
 	$query = "INSERT INTO $table ($columns) VALUES ($values);";
 	return $query;
+}
+
+function getPasswordHash($password) {
+	$iteration = 100;
+	$salt = getPasswordSalt();
+	$hash = hash_pbkdf2('md5', $password, $salt, $iteration, 32);
+
+	return $hash;
 }
 ?>
