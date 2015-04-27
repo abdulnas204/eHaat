@@ -1,4 +1,5 @@
 <?php
+require_once('common/util.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
