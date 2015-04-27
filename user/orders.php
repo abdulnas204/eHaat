@@ -4,9 +4,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>eHaat - Home page</title>
+	<title>eHaat - User's order</title>
 </head>
 <body>
-	<h1>This will be eHaat landing page</h1>
+	<h1>This will be user's order history</h1>
 </body>
 </html>
