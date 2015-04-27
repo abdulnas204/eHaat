@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `t_user` (
 `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `emailID` varchar(255) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(32) NOT NULL,
   `tempKey` varchar(10) NOT NULL,
   `activeKey` int(11) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
