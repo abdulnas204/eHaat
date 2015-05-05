@@ -35,7 +35,6 @@ CREATE TABLE IF NOT EXISTS `t_executedorderdetails` (
   `productId` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `rate` double(20,10) NOT NULL,
-  `discount` double(20,10) NOT NULL,
   `price` double(20,10) NOT NULL,
   `createdAt` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -70,7 +69,6 @@ CREATE TABLE IF NOT EXISTS `t_pendingorderdetails` (
   `productId` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `rate` double(20,10) NOT NULL,
-  `discount` double(20,10) NOT NULL,
   `price` double(20,10) NOT NULL,
   `createdAt` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -106,8 +104,6 @@ CREATE TABLE IF NOT EXISTS `t_product` (
   `rate` double(20,10) NOT NULL,
   `quantityAdded` int(11) NOT NULL,
   `quantitySold` int(11) DEFAULT '0',
-  `discountRate` double(20,10) DEFAULT '0.0000000000',
-  `discountPrice` double(20,10) DEFAULT '0.0000000000',
   `unitOfQuantity` varchar(255) DEFAULT 'kg',
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
