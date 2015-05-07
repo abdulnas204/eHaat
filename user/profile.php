@@ -1,6 +1,7 @@
 <?php
-require_once('./backend/precheck.php');
+session_start();
 require_once('../common/util.php');
+require_once('./backend/precheck.php');
 require_once('backend/fetchUserInfo.php');
 ?>
 <!DOCTYPE html>
@@ -10,14 +11,14 @@ require_once('backend/fetchUserInfo.php');
 	<title>eHaat - User's order</title>
 </head>
 <body>
-	<h1>This will be user's profile page</h1>
-	<form action="./backend/updateProfile.php">
+	<h1>My profile</h1>
+	<form action="./backend/updateProfile.php" method="POST">
 		<label for="username">Username</label>
-		<input name="username" type="text" value="<?=$username?>">
+		<input name="username" type="text" value="<?=$username?>"><br>
 		<label for="email">Email ID</label>
-		<input name="email" type="text" value="<?=$emailId?>">
+		<input name="email" type="text" value="<?=$emailId?>"><br>
 		<label for="contact">Contact Number</label>
-		<input name="contact" type="text" value="<?=$contact?>">
+		<input name="contact" type="number" value="<?=$contact?>"><br>
 		<input type="submit" name="update" value="Update">
 	</form>
 </body>

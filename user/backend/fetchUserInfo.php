@@ -1,5 +1,4 @@
-<?php 
-require_once('precheck.php');
+<?php
 require_once($serverRoot.'/common/dbConnect.php');
 if(! isset($error)) {
 	$userId = $_SESSION["id"];
