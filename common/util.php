@@ -1,4 +1,6 @@
 <?php
+$serverRoot = $_SERVER["DOCUMENT_ROOT"]."/eHaat";
+
 function getPasswordSalt() {
 	$salt = "eHaat";
 	return $salt;

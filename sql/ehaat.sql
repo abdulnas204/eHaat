@@ -105,6 +105,7 @@ CREATE TABLE IF NOT EXISTS `t_product` (
   `quantityAdded` int(11) NOT NULL,
   `quantitySold` int(11) DEFAULT '0',
   `unitOfQuantity` varchar(255) DEFAULT 'kg',
+  `photo` varchar(255),
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -138,6 +139,7 @@ CREATE TABLE IF NOT EXISTS `t_user` (
   `username` varchar(255) NOT NULL,
   `emailID` varchar(255) NOT NULL,
   `password` varchar(32) NOT NULL,
+  `contact` varchar(10) NOT NULL,
   `tempKey` varchar(10) NOT NULL,
   `activeKey` int(11) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,

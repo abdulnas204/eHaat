@@ -12,20 +12,23 @@ if(isset($error)) {
 	&& isset($_POST["email"])
 	&& isset($_POST["password"])
 	&& isset($_POST["confirmPassword"])
+	&& isset($_POST["contact"])
 	) {
 
 	$username = $_POST["name"];
 	$email = $_POST["email"];
 	$password = $_POST["password"];
 	$confirmPassoword = $_POST["confirmPassword"];
+	$contact = $_POST["contact"];
+
 	if($password == $confirmPassoword) {
 
 		$password = getPasswordHash($password);
 
 		$query = getInsertQuery("t_user", 
-												["username", "emailID", "password", "activeKey"],
-												[$username, $email, $password, 1],
-												["s", "s", "s", "n"]
+												["username", "emailID", "password", "contact", "activeKey"],
+												[$username, $email, $password, $contact, 1],
+												["s", "s", "s", "s", "n"]
 												);
 
 		if($link->query($query)) {

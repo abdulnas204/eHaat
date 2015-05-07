@@ -5,6 +5,9 @@ if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true) {
 	header("Location: ./user/index.php");
 	die();
 }
+if(isset($_SESSION["error"])) {
+	var_dump($_SESSION["error"]);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,8 +36,8 @@ if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true) {
 		<label for="email">Email ID:</label>
 		<input type="email" name="email" placeholder="eg. abc@name.com">
 
-		<label for="contactNumber">Mobile Number</label>
-		<input type="number" min="0" placeholder="eg. 9876543210">
+		<label for="contact">Mobile Number</label>
+		<input type="number" name="contact" min="0" placeholder="eg. 9876543210">
 
 		<label for="password">Password:</label>
 		<input type="password" name="password" placeholder="password">
