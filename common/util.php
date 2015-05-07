@@ -11,9 +11,9 @@ function redirectWithError($var, $msg, $to) {
 		$link->close();
 	}
 
-	$_SESSION["error"] = [
+	$_SESSION["error"] = array(
 		$var => $msg
-	];
+	);
 	header("LOCATION: $to");
 	die();
 }
@@ -23,9 +23,9 @@ function redirectWithMessage($var, $msg, $to) {
 		$link->close();
 	}
 	
-	$_SESSION["message"] = [
+	$_SESSION["message"] = array(
 		$var => $msg
-	];
+	);
 	header("LOCATION: $to");
 	die();
 }
