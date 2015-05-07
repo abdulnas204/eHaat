@@ -1,6 +1,10 @@
 <?php
 session_start();
 require_once('./common/util.php');
+if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true) {
+	header("Location: ./user/index.php");
+	die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
