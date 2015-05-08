@@ -9,8 +9,11 @@ $contact = $_POST["contact"];
 
 $query = "UPDATE t_user SET username='$username', contact='$contact' WHERE id=$userId;";
 if($result = $link->query($query)) {
-	die("Update successfull");
+	echo "Update successfull";
+	header("Refresh:3; ../index.php");
 } else {
-	die("Update unsuccessfull");
+	echo "Update unsuccessfull";
+	header("Refresh:3; ../index.php");
 }
+die();
 ?>
