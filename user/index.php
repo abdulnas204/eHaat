@@ -1,6 +1,7 @@
 <?php
-//<!--require_once('./backend/precheck.php');
-//require_once('../common/util.php');-->
+session_start();
+require_once('../common/util.php');
+require_once('./backend/precheck.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

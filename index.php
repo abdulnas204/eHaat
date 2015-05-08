@@ -7,6 +7,15 @@ if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true) {
 }
 if(isset($_SESSION["error"])) {
 	var_dump($_SESSION["error"]);
+	unset($_SESSION["error"]);
+}
+if(isset($_SESSION["login"])) {
+	var_dump($_SESSION["login"]);
+	unset($_SESSION["login"]);
+}
+if(isset($_SESSION["message"])) {
+	var_dump($_SESSION["message"]);
+	unset($_SESSION["message"]);
 }
 ?>
 <!DOCTYPE html>
