@@ -1,8 +1,8 @@
 <?php 
 session_start();
 // Backend code for logging the user in
-require_once('common/util.php');
-require_once('common/dbConnect.php');
+require_once('./common/util.php');
+require_once('./common/dbConnect.php');
 
 if(isset($_POST["login"])
 	&& isset($_POST["email"])
@@ -17,7 +17,6 @@ if(isset($_POST["login"])
 	$query = "SELECT id, username from t_user WHERE emailID = '$email' AND password = '$password' AND activeKey=1;";
 	
 	$result = $link->query($query);
-
 	if($result->num_rows > 1) {
 		redirectWithError("login", "Oops! Server problem", "index.php");
 
@@ -28,11 +27,11 @@ if(isset($_POST["login"])
 		$_SESSION["user"] = $record["username"];
 		$_SESSION["loggedIn"] = true;
 		
-		redirectWithMessage("login", "Welcome back", "user/index.php");
+		redirectWithMessage("login", "Welcome back", "./user/index.php");
 	} else {
-		redirectWithMessage("login", "No user found with such credentials", "index.php");
+		redirectWithMessage("login", "No user found with such credentials", "./index.php");
 	}
 } else {	
-	redirectWithError("login", "Insufficient data supplied", "index.php");
+	redirectWithError("login", "Insufficient data supplied", "./index.php");
 }
 ?>
