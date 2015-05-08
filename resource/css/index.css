@@ -13,3 +13,7 @@
 .offset-10{
 	margin-top:  10px;
 }
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}

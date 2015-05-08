@@ -11,6 +11,7 @@
 	<title>eHaat - User's order</title>
 	<link rel="stylesheet" href="../resource/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../resource/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="../resource/css/index.css">
     <script src="../resource/js/jquery.min.js"></script>
     <script type="text/javascript" src="../resource/js/bootstrap.min.js"></script>
 </head>
@@ -29,21 +30,19 @@
 			
 			<div id="header" class="container page-header text-center">
 				<div class="col-md-8">
-					<h1 class="voffset">Edit profile</h1>
+					<h1>Edit profile</h1>
 				</div>
 				<div class="col-md-2"></div>
 				<div class="col-md-2">
 					<!-- avatar-create new repo-logout -->
 					<div class="dropdown">
 		  
-					<a class="dropdown-toggle avatar" data-toggle="dropdown" role="button" aria-expanded="false" href="#">
+					<a class="dropdown-toggle avatar pull-left" data-toggle="dropdown" role="button" aria-expanded="false" href="#">
 					    <img height="30" width="30" src="../resource/img/raj.jpg" alt="@hippozippo"></img>
 				        	<span>hippozippo</span>
 							<span class="caret"></span>
 					</a>
 			    	<ul class="dropdown-menu" role="menu">
-					    <li><a href="repo.php">Repositories</a></li>
-					    <li><a href="dashboard.php">Dashboard</a></li>
 					    <li><a href="../index.php">Logout</a></li>
 					</ul>
 					
@@ -60,43 +59,37 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="username" class="col-md-offset-1 col-sm-3 control-label">Last name</label>
+					<label for="username" class="col-md-offset-1 col-sm-3 control-label offset-20">Last name</label>
 					<div class="col-sm-5">
-						<input type="text" name="username" class="form-control">
+						<input type="text" name="username" class="form-control offset-20">
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="username" class="col-md-offset-1 col-sm-3 control-label">Username</label>
+					<label for="email" class="col-md-offset-1 col-sm-3 control-label offset-20">Email</label>
 					<div class="col-sm-5">
-						<input type="text" name="username" class="form-control">
+						<input type="text" name="email" class="form-control offset-20">
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="email" class="col-md-offset-1 col-sm-3 control-label">Email</label>
+					<label for="password" class="col-md-offset-1 col-sm-3 control-label offset-20">Old Password</label>
 					<div class="col-sm-5">
-						<input type="text" name="email" class="form-control">
+						<input type="password" name="password" class="form-control offset-20">
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="password" class="col-md-offset-1 col-sm-3 control-label">Old Password</label>
+					<label for="password" class="col-md-offset-1 col-sm-3 control-label offset-20">New Password</label>
 					<div class="col-sm-5">
-						<input type="password" name="password" class="form-control">
+						<input type="password" name="password" class="form-control offset-20">
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="password" class="col-md-offset-1 col-sm-3 control-label">New Password</label>
+					<label for="confirm_pass" class="col-md-offset-1 col-sm-3 control-label offset-20">Confirm new Password</label>
 					<div class="col-sm-5">
-						<input type="password" name="password" class="form-control">
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="confirm_pass" class="col-md-offset-1 col-sm-3 control-label">Confirm new Password</label>
-					<div class="col-sm-5">
-						<input type="password" name="confirm_pass" class="form-control">
+						<input type="password" name="confirm_pass" class="form-control offset-20">
 					</div>
 				</div>
 				<div class="col-md-offset-5 col-md-3">
-					<input type="submit" name="register-btn" id="register-btn" class="btn btn-success btn-block voffset1" value="Update">
+					<input type="submit" name="register-btn" id="register-btn" class="btn btn-success btn-block offset-20" value="Update">
 				</div>
 			</form>
 </body>

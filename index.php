@@ -48,8 +48,11 @@ if(isset($_SESSION["error"])) {
 			<form action="register.php" method="POST" class="form-horizontal">
 				<div class="form-group">
 					<label for="name" class="col-sm-3 text-center offset-10">Username:</label>
-					<div class="col-sm-9">
-						<input type="text" name="name" class="form-control input-lg" placeholder="myusername">
+					<div class="col-sm-4">
+						<input type="text" name="name" class="form-control input-lg" placeholder="First name">
+					</div>
+					<div class="col-sm-5">
+						<input type="text" name="name" class="form-control input-lg" placeholder="Last name">
 					</div>
 				</div>
 				<div class="form-group">
