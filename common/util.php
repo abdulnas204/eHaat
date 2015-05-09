@@ -1,5 +1,7 @@
 <?php
-$serverRoot = $_SERVER["DOCUMENT_ROOT"]."/eHaat";
+$root = str_replace('/', DIRECTORY_SEPARATOR, $_SERVER["DOCUMENT_ROOT"]);
+$serverRoot = join(DIRECTORY_SEPARATOR, array($root, "eHaat"));
+$imageDir = join(DIRECTORY_SEPARATOR, array($serverRoot, 'resource', 'image'));
 
 function getPasswordSalt() {
 	$salt = "eHaat";

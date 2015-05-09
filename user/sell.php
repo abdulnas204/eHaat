@@ -10,9 +10,17 @@ require_once('./backend/precheck.php');
 	<title>eHaat - New Item</title>
 </head>
 <body>
-	<form action="newItem.php" method="POST">
+	<form action="./backend/newItem.php" method="POST" enctype="multipart/form-data">
 		<label for="name">Name:</label>
 		<input type="text" name="name" placeholder="Product's name">
+		<br>
+		
+		<label for="category">Category:</label>
+		<select name="category">
+			<option value="vegetable">Vegetable</option>
+			<option value="fruit">Fruit</option>
+			<option value="other">Other</option>
+		</select>
 		<br>
 
 		<label for="rate">Price:</label>
@@ -29,6 +37,10 @@ require_once('./backend/precheck.php');
 
 		<label for="quantity">Number of items:</label>
 		<input type="number" name="quantity" placeholder="Number of items"><span>unit should be same as above</span>
+		<br>
+
+		<label for="photo">Upload a recent pic:</label>
+		<input type="file" name="photo">
 		<br>
 
 		<input type="submit" name="newItem" value="Add">
