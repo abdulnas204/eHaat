@@ -100,8 +100,9 @@ DROP TABLE IF EXISTS `t_product`;
 CREATE TABLE IF NOT EXISTS `t_product` (
 `id` int(11) NOT NULL,
   `ownerId` int(11) NOT NULL,
-  `name` int(255) NOT NULL,
-  `rate` double(20,10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
+  `per` int(11) NOT NULL,
   `quantityAdded` int(11) NOT NULL,
   `quantitySold` int(11) DEFAULT '0',
   `unitOfQuantity` varchar(255) DEFAULT 'kg',
