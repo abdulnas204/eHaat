@@ -12,7 +12,6 @@ if(isset($_GET["update"]) && $_GET["update"] == true && isset($_GET["id"])) {
 		
 		$record["name"] = explode("$", $record["name"]);
 
-		$action = "updateItem.php";
 		$name = $record["name"][0];
 		$category = $record["name"][1];
 		$rate = $record["price"];
@@ -22,10 +21,10 @@ if(isset($_GET["update"]) && $_GET["update"] == true && isset($_GET["id"])) {
 		$photo = $record["photo"];
 
 	} else {
-		header("Refresh:5; ../index.php");
+		header("Refresh:5; $serverRoot/user/index.php");
 		die("Could not fetch information about the item");
 	}
 } else {
-	header("Location: ../index.php");
+	header("Location: $serverRoot/user/index.php");
 }
 ?>

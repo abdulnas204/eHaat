@@ -11,7 +11,8 @@ require_once('./backend/productDetails.php');
 	<title>eHaat - New Item</title>
 </head>
 <body>
-	<form action="./backend/newItem.php" method="POST" enctype="multipart/form-data">
+	<form method="POST" action="./backend/updateItem.php">
+		<input type="hidden" value="<?=$_GET['id']?>" name="id">
 		<label for="name">Name:</label>
 		<input type="text" name="name" placeholder="Product's name" value="<?=$name?>">
 		<br>
@@ -36,12 +37,15 @@ require_once('./backend/productDetails.php');
 		</select>
 		<br>
 
+		<span>Total avaialable quantity: <?=$quantity?></span>
+		<br>
+		
 		<label for="addQuantity">Add:</label>
-		<input type="number" name="addQuantity" placeholder="Number of items"><span>unit should be same as above</span>
+		<input type="number" name="addQuantity" placeholder="Number of items" value="0"><span>unit should be same as above</span>
 		<br>
 
-		<label for="LessQuantity">Decrease:</label>
-		<input type="number" name="LessQuantity" placeholder="Number of items" max="<?=$quantity?>"><span>unit should be same as above</span>
+		<label for="lessQuantity">Decrease:</label>
+		<input type="number" name="lessQuantity" placeholder="Number of items" value="0" max="<?=$quantity?>"><span>unit should be same as above</span>
 		<br>
 
 		<label>Item pic: </label>

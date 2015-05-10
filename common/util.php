@@ -60,6 +60,28 @@ function getInsertQuery($table, $cols, $vals, $types) {
 	return $query;
 }
 
+function getUpdateQuery($table, $cols, $vals, $types, $condition) {
+
+	$n = sizeof($cols);
+	$params = "";
+	for($i=0; $i<$n-1; $i++) {
+		if($types[$i] == "s") {
+			$params = $params."$cols[$i]='$vals[$i]',";
+		} else {
+			$params = $params."$cols[$i]=$vals[$i],";
+		}
+	}
+	$n--;
+	if($types[$n] == "s") {
+		$params = $params."$cols[$n]='$vals[$n]'";
+	} else {
+		$params = $params."$cols[$n]=$vals[$n]";
+	}
+	$query = "UPDATE $table SET $params WHERE $condition;";
+	return $query;
+}
+
+
 function getPasswordHash($password) {
 	$iteration = 100;
 	$salt = getPasswordSalt();
