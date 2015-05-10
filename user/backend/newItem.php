@@ -40,7 +40,7 @@ if(
 		echo "Only images are to be uploaded";
   }
   if($saneData) {
-  	$checkQuery = "SELECT id FROM t_product WHERE ownerId = $userId AND name = '$name'";
+  	$checkQuery = "SELECT id FROM t_product WHERE ownerId = $userId AND name = '$name\$$category'";
 		$result = $link->query($checkQuery);
 	
 		if($result->num_rows > 0) {
@@ -51,7 +51,7 @@ if(
 
 	  			$query = getInsertQuery('t_product',
 	  													['ownerId', 'name', 'price', 'per', 'quantityAdded', 'quantitySold', 'unitOfQuantity', 'photo'],
-	  													[$userId, $name, $rate, $per, $quantity, 0, $unit, $fileName],
+	  													[$userId, $name."\$".$category, $rate, $per, $quantity, 0, $unit, $fileName],
 	  													["n", "s", "n", "n", "n", "n", "s", "s"]);
 					$result = $link->query($query);
 					if($result) {
