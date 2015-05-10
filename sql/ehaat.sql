@@ -50,7 +50,7 @@ DROP TABLE IF EXISTS `t_executedorder`;
 CREATE TABLE IF NOT EXISTS `t_executedorder` (
   `id` int(11) NOT NULL,
   `buyerId` int(11) NOT NULL,
-  `addressIndex` int(1) NOT NULL,
+  `address` varchar(255) NOT NULL,
   `billAmount` int(11) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -84,7 +84,7 @@ DROP TABLE IF EXISTS `t_pendingorder`;
 CREATE TABLE IF NOT EXISTS `t_pendingorder` (
 `id` int(11) NOT NULL,
   `buyerId` int(11) NOT NULL,
-  `addressIndex` int(11) NOT NULL,
+  `address` varchar(255) NOT NULL,
   `billAmount` int(11) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
