@@ -2,7 +2,7 @@
 session_start();
 require_once('../common/util.php');
 require_once('./backend/precheck.php');
-require_once('backend/fetchUserInfo.php');
+require_once('./backend/fetchUserInfo.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,5 +81,33 @@ require_once('backend/fetchUserInfo.php');
 				<input type="submit" name="register-btn" id="register-btn" class="btn btn-success btn-block offset-20" value="Update">
 			</div>
 		</form>
+
+		<!-- This is the list of all products added by this user -->
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<hr>
+		<?php if(sizeof($products) == 0) {
+			echo "Sorry you haven't added any product yet";
+		} else {
+		?>
+			<ol>
+			<?php 
+				for($i=0; $i<sizeof($products); $i++) { 
+					$products[$i]["name"] = explode("$", $products[$i]["name"]);
+					?>
+					<li>
+						<div>
+							<span>Name:	<?=$products[$i]["name"][0] ?></span><br>	
+							<span>Category: <?=$products[$i]["name"][1] ?></span><br>	
+							<span>Price: <?=$products[$i]["price"] ?> per <?=$products[$i]["per"] ?> <?=$products[$i]["unitOfQuantity"] ?></span><br>	
+							<span>Total Units: <?=$products[$i]["quantityAdded"] ?></span><br>	
+							<span>Sold: <?=$products[$i]["quantitySold"] ?></span><br>	
+							<span>Last Updated: <?=$products[$i]["updatedAt"] ?></span><br>	
+							<a href="./item.php?update=true&id=<?=$products[$i]['id']?>">Edit</a><br>
+							<span><img src="../resource/image/<?=$products[$i]['photo'] ?>" alt="Product photo"></span><br>
+						</div>
+					</li>
+			<?php } ?>
+			</ol>
+<?php } ?>
 </body>
 </html>
