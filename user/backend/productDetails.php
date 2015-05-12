@@ -10,15 +10,19 @@ if(isset($_GET["update"]) && $_GET["update"] == true && isset($_GET["id"])) {
 	if($result) {
 		$record = $result->fetch_assoc();
 		
-		$record["name"] = explode("$", $record["name"]);
+		if($record["ownerId"] == $_SESSION["id"]) {
+			$record["name"] = explode("$", $record["name"]);
 
-		$name = $record["name"][0];
-		$category = $record["name"][1];
-		$rate = $record["price"];
-		$per = $record["per"];
-		$unit = $record["unitOfQuantity"];
-		$quantity = $record["quantityAdded"] - $record["quantitySold"];
-		$photo = $record["photo"];
+			$name = $record["name"][0];
+			$category = $record["name"][1];
+			$rate = $record["price"];
+			$per = $record["per"];
+			$unit = $record["unitOfQuantity"];
+			$quantity = $record["quantityAdded"] - $record["quantitySold"];
+			$photo = $record["photo"];
+		} else {
+			header("Location: $serverRoot/user/index.php");		//In case the product's owner is not the user who is logged in
+		}
 
 	} else {
 		header("Refresh:5; $serverRoot/user/index.php");
