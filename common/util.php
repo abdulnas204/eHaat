@@ -89,4 +89,13 @@ function getPasswordHash($password) {
 
 	return $hash;
 }
+
+function getSearchString($text) {
+	$text = explode(" ", $text);
+	$str = "%";
+	foreach($text as $keyword) {
+		$str = $str . "" . $keyword . "%";
+	}
+	return $str;
+}
 ?>

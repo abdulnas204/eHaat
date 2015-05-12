@@ -17,7 +17,10 @@ require_once('./backend/getRecentProducts.php')
 <body>
 <div class="container">
   <h1>This will be user's landing page</h1>
-  <form action="./browse.php"></form>
+  <form action="./browse.php" method="GET">
+    <input type="text" name="searchText" placeholder="Enter your search string here">
+    <input type="submit" name="search" value="Search">
+  </form>
   <hr>
   <div id="vegetables"> 
     <?php
