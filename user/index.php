@@ -2,6 +2,7 @@
 session_start();
 require_once('../common/util.php');
 require_once('./backend/precheck.php');
+require_once('./backend/getRecentProducts.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,25 +15,72 @@ require_once('./backend/precheck.php');
     <script type="text/javascript" src="../resource/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h1>This will be user's landing page</h1>
-	<div role="tabpanel">
-
-  <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
-  </ul>
-
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">...</div>
-    <div role="tabpanel" class="tab-pane" id="profile">...</div>
-    <div role="tabpanel" class="tab-pane" id="messages">...</div>
-    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+<div class="container">
+  <h1>This will be user's landing page</h1>
+  <form action="./browse.php"></form>
+  <hr>
+  <div id="vegetables"> 
+    <?php
+      if(sizeof($vegetables) > 0) {
+        foreach($vegetables as $item) {
+          ?>
+          <div>
+            <span>ID: <?=$item["id"]?></span><br>
+            <span>Name: <?=$item["name"]?></span><br>
+            <span>OwnerId: <?=$item["ownerId"]?></span><br>
+            <span>Price: <?=$item["price"]?> per <?=$item["per"]?> <?=$item["unitOfQuantity"]?></span><br>
+            <span>Quantity Available: <? echo ($item["quantityAdded"] - $item["quantitySold"]); ?></span><br>
+            <img src="../resource/image/<?=$item['photo']?>" alt="Item's image">
+          </div>
+        <?php
+        }
+      } else {
+        echo "No vegetables found";
+      }
+    ?>
   </div>
-
+  <hr>
+  <div id="fruits"> 
+    <?php
+      if(sizeof($fruits) > 0) {
+        foreach($fruits as $item) {
+          ?>
+          <div>
+            <span>ID: <?=$item["id"]?></span><br>
+            <span>Name: <?=$item["name"]?></span><br>
+            <span>OwnerId: <?=$item["ownerId"]?></span><br>
+            <span>Price: <?=$item["price"]?> per <?=$item["per"]?> <?=$item["unitOfQuantity"]?></span><br>
+            <span>Quantity Available: <? echo ($item["quantityAdded"] - $item["quantitySold"]); ?></span><br>
+            <img src="../resource/image/<?=$item['photo']?>" alt="Item's image">
+          </div>
+        <?php
+        }
+      } else {
+        echo "No fruits found";
+      }  
+    ?>
+  </div>
+  <hr>
+  <div id="others"> 
+    <?php
+      if(sizeof($others) > 0) {
+        foreach($others as $item) {
+          ?>
+          <div>
+            <span>ID: <?=$item["id"]?></span><br>
+            <span>Name: <?=$item["name"]?></span><br>
+            <span>OwnerId: <?=$item["ownerId"]?></span><br>
+            <span>Price: <?=$item["price"]?> per <?=$item["per"]?> <?=$item["unitOfQuantity"]?></span><br>
+            <span>Quantity Available: <? echo ($item["quantityAdded"] - $item["quantitySold"]); ?></span><br>
+            <img src="../resource/image/<?=$item['photo']?>" alt="Item's image">
+          </div>
+        <?php
+        }
+      } else {
+        echo "Nothing found for this category";
+      }  
+    ?>
+  </div>
 </div>
 </body>
 </html>
