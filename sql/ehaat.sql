@@ -25,6 +25,21 @@ USE `ehaat`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `t_cart`
+--
+
+DROP TABLE IF EXISTS `t_cart`;
+CREATE TABLE IF NOT EXISTS `t_cart` (
+  `productId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `t_executedorderdetails`
 --
 
@@ -150,6 +165,13 @@ CREATE TABLE IF NOT EXISTS `t_user` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Constraints for table `t_cart`
+--
+ALTER TABLE `t_cart`
+ADD CONSTRAINT `t_cart_ibfk_1` FOREIGN KEY (`productId`) REFERENCES `t_product` (`id`),
+ADD CONSTRAINT `t_cart_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `t_user` (`id`);
 
 --
 -- Indexes for table `t_executedorder`
