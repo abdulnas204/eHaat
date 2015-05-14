@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `t_cart` (
   `userId` int(11) NOT NULL,
   `price` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
+  `cartId` varchar(10) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

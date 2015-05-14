@@ -98,4 +98,15 @@ function getSearchString($text) {
 	}
 	return $str;
 }
+
+function getRandomString($len){
+    $result = "";
+    $chars = "abcdefghijklmnopqrstuvwxyz_?!-0123456789";
+    $charArray = str_split($chars);
+    for($i = 0; $i < $len; $i++){
+	    $randItem = array_rand($charArray);
+	    $result .= "".$charArray[$randItem];
+    }
+    return $result;
+}
 ?>
