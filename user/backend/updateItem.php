@@ -45,9 +45,9 @@ if(
 			// echo $originalPath."<br>".$finalPath;
 			if(rename($originalPath, $finalPath)) {
 				$query = getUpdateQuery('t_product',
-																['name', 'price', 'per', 'unitOfQuantity', 'quantityAdded', 'photo'],
-																[$name, $rate, $per, $unit, "quantityAdded".$quantity, "$imageName"],
-																["s", "n", "n", "s", "n", "s"],
+																array('name', 'price', 'per', 'unitOfQuantity', 'quantityAdded', 'photo'),
+																array($name, $rate, $per, $unit, "quantityAdded".$quantity, "$imageName"),
+																array("s", "n", "n", "s", "n", "s"),
 																"id = $id"
 																);
 				if($result = $link->query($query)) {

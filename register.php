@@ -1,8 +1,8 @@
 <?php
 session_start();
 //backend page for registering new user
-require_once('common/util.php');
-require_once('common/dbConnect.php');
+require_once('./common/util.php');
+require_once('./common/dbConnect.php');
 
 if(isset($error)) {
 	redirectWithError("connection", "Server connection problem", "index.php");
@@ -26,9 +26,9 @@ if(isset($error)) {
 		$password = getPasswordHash($password);
 
 		$query = getInsertQuery("t_user", 
-												["username", "emailID", "password", "contact", "activeKey"],
-												[$username, $email, $password, $contact, 1],
-												["s", "s", "s", "s", "n"]
+												array("username", "emailID", "password", "contact", "activeKey"),
+												array($username, $email, $password, $contact, 1),
+												array("s", "s", "s", "s", "n")
 												);
 
 		if($link->query($query)) {
