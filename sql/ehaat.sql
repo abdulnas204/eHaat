@@ -167,11 +167,10 @@ CREATE TABLE IF NOT EXISTS `t_user` (
 --
 
 --
--- Constraints for table `t_cart`
+-- Indexes for table `t_cart`
 --
 ALTER TABLE `t_cart`
-ADD CONSTRAINT `t_cart_ibfk_1` FOREIGN KEY (`productId`) REFERENCES `t_product` (`id`),
-ADD CONSTRAINT `t_cart_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `t_user` (`id`);
+ ADD KEY `productId` (`productId`), ADD KEY `userId` (`userId`);
 
 --
 -- Indexes for table `t_executedorder`
@@ -237,6 +236,13 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `t_cart`
+--
+ALTER TABLE `t_cart`
+ADD CONSTRAINT `t_cart_ibfk_1` FOREIGN KEY (`productId`) REFERENCES `t_product` (`id`),
+ADD CONSTRAINT `t_cart_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `t_user` (`id`);
 
 --
 -- Constraints for table `t_executedorderdetails`
