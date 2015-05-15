@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `t_cart` (
   `userId` int(11) NOT NULL,
   `price` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
+  `cartId` varchar(10) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -156,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `t_user` (
   `emailID` varchar(255) NOT NULL,
   `password` varchar(32) NOT NULL,
   `contact` varchar(10) NOT NULL,
-  `tempKey` varchar(10) NOT NULL,
+  `tempKey` varchar(10) DEFAULT NULL,
   `activeKey` int(11) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
