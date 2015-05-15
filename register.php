@@ -39,7 +39,7 @@ if(isset($error)) {
 			redirectWithMessage("register", "Welcome to eHaat system", "user/index.php");
 		} else {
 			
-			redirectWithError("register", "Could not register", "index.php");
+			redirectWithError("register", $link->error, "index.php");
 		}
 	}
 } else {

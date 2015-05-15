@@ -1,18 +1,36 @@
-.offset-120{
-	margin-top : 120px;
+/* top margin offset */
+
+.offset-10{
+	margin-top:  10px;
 }
 
 .offset-20{
 	margin-top:  20px;
 }
 
+.offset-25{
+	margin-top: 25px;
+}
+
+.offset-29{
+	margin-top: 29px;
+}
+
+.offset-45{
+	margin-top:  45px;
+}
+
+.offset-120{
+	margin-top : 120px;
+}
+
+/*bottom margin offset */
+
 .offset-30{
 	margin-bottom: 30px;
 }
 
-.offset-10{
-	margin-top:  10px;
-}
+
 
 .dropdown:hover .dropdown-menu {
 	display: block;
