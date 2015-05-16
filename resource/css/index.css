@@ -24,13 +24,21 @@
 	margin-top : 120px;
 }
 
-/*bottom margin offset */
+/* bottom margin offset */
 
 .offset-30{
 	margin-bottom: 30px;
 }
 
+/* left margin */
+.offset-110{
+	margin-left: 110px;
+}
 
+/* right margin */
+.offset-20{
+	margin-right: 20px;
+}
 
 .dropdown:hover .dropdown-menu {
 	display: block;

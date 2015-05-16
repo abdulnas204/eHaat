@@ -20,6 +20,7 @@ require_once('./backend/getRecentProducts.php')
   <div class="row">
     <div class="col-md-3">
       <a href="sell.php"><div class="btn btn-warning pull-left btn-md offset-45">Add new item</div></a>
+
     </div>
     <div class="col-md-6">
       <form action="./browse.php" method="GET" class="offset-45">
@@ -27,13 +28,14 @@ require_once('./backend/getRecentProducts.php')
           <span class="input-group-addon">e-Haat Bazaar</span>
           <input type="text" name="searchText" placeholder="Enter your search string here" class="form-control input-lg">
           <span class="input-group-btn">        
-            <input type="submit" name="search" value="Search" class="btn btn-success input-lg">
+            <input type="submit" name="search" value="Search" class="btn btn-primary input-lg">
           </span>
         </div>
       </form>
     </div>
     <div class="col-md-3">
       <a href="logout.php"><div class="btn btn-warning pull-right btn-md offset-45">Logout</div></a>
+      <a href="profile.php"><div class="btn btn-warning pull-right btn-md offset-45 offset-20">Edit Profile</div></a>
     </div>
   </div>
   <hr>
@@ -45,9 +47,9 @@ require_once('./backend/getRecentProducts.php')
           <div class="col-md-3">
             <img src="../resource/image/<?=$item['photo']?>" alt="Item's image" style="width:250px; height:250px;" 
             class="img-thumbnail img-responsive"><br>
-            <span>ID: <?=$item["id"]?></span><br>
+            <span class="hidden">ID: <?=$item["id"]?></span><br>
             <span>Name: <?=$item["name"]?></span><br>
-            <span>OwnerId: <?=$item["ownerId"]?></span><br>
+            <span class="hidden">OwnerId: <?=$item["ownerId"]?></span>
             <span>Price: Rs. <?=$item["price"]?> per <?=$item["per"]?> <?=$item["unitOfQuantity"]?></span><br>
             <span>Quantity Available: <?php echo ($item["quantityAdded"] - $item["quantitySold"]); ?></span><br>
             <span><a href="#"><div class="btn btn-success col-md-offset-3 col-md-6 offset-10">
@@ -69,9 +71,9 @@ require_once('./backend/getRecentProducts.php')
           <div class="col-md-3">
             <img src="../resource/image/<?=$item['photo']?>" alt="Item's image" style="width:250px; height:250px;" 
             class="img-thumbnail img-responsive"><br>
-            <span>ID: <?=$item["id"]?></span><br>
+            <span class="hidden">ID: <?=$item["id"]?></span><br>
             <span>Name: <?=$item["name"]?></span><br>
-            <span>OwnerId: <?=$item["ownerId"]?></span><br>
+            <span class="hidden">OwnerId: <?=$item["ownerId"]?></span>
             <span>Price: <?=$item["price"]?> per <?=$item["per"]?> <?=$item["unitOfQuantity"]?></span><br>
             <span>Quantity Available: <?php echo ($item["quantityAdded"] - $item["quantitySold"]); ?></span><br>
             <span><a href="#"><div class="btn btn-success col-md-offset-3 col-md-6 offset-10">
@@ -93,9 +95,9 @@ require_once('./backend/getRecentProducts.php')
           <div class="col-md-3">
             <img src="../resource/image/<?=$item['photo']?>" alt="Item's image" style="width:250px; height:250px;" 
             class="img-thumbnail img-responsive"><br>
-            <span>ID: <?=$item["id"]?></span><br>
+            <span class="hidden">ID: <?=$item["id"]?></span><br>
             <span>Name: <?=$item["name"]?></span><br>
-            <span>OwnerId: <?=$item["ownerId"]?></span><br>
+            <span class="hidden">OwnerId: <?=$item["ownerId"]?></span>
             <span>Price: <?=$item["price"]?> per <?=$item["per"]?> <?=$item["unitOfQuantity"]?></span><br>
             <span>Quantity Available: <?php echo ($item["quantityAdded"] - $item["quantitySold"]); ?></span><br>
             <span><a href="#"><div class="btn btn-success col-md-offset-3 col-md-6 offset-10">

@@ -20,9 +20,9 @@ require_once('./backend/precheck.php');
 			<div class="col-md-8">
 				<h1>Add new Item</h1>
 			</div>
-			<div class="col-md-2"></div>
-			<div class="col-md-2">
+			<div class="col-md-4">
 				<a href="logout.php"><div class="btn btn-warning pull-right btn-md offset-20">Logout</div></a>
+				<a href="./index.php"><div class="btn btn-warning pull-right btn-md offset-20">Home</div></a>
 			</div>
 		</div>
 
